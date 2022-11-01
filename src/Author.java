@@ -15,6 +15,21 @@ public class Author {
         return this.middleName;
     }
 
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return Object.equals(name, author.name) && Object.equals(middleName, author.middleName);
+    }
+
+    public int hashCode() {
+        return Object.hash(name, middleName);
+    }
+
+    public String toString() {
+        return this.name + " " + this.middleName;
+    }
+
 }
 
 

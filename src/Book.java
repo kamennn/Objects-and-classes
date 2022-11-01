@@ -26,4 +26,19 @@ public class Book {
         this.yearPublication = yearPublication;
     }
 
+    
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return yearPublication == book.yearPublication && Object.equals(bookName, book.bookName) && Object.equals(author, book.author);
+    }
+
+    public int hashCode() {
+        return Object.hash(bookName, author, yearPublication);
+    }
+
+    public String toString() {
+        return this.bookName + " " + this.yearPublication + " " + this.author;
+    }
 }

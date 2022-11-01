@@ -2,24 +2,22 @@ public class Main {
 
 
     public static void main(String[] args) {
-        String nameJohn = "John";
-        int ageJohn = 13;
+        Book stalker = new Book("S.T.A.L.K.E.R.", 2007, new Author("Sergey", "Nedorubov"));
+        System.out.println(stalker);
+        Author andrzej = new Author("Andrzej", "Sapkowski");
+        Book witcher = new Book("Witcher",1986, andrzej);
+        System.out.println(witcher.getBookName() + " " + witcher.getYearPublication() + " " + andrzej);
+        witcher.setYearPublication(2013);
+        System.out.println(witcher.getBookName() + " " + witcher.getYearPublication() + " " + andrzej);
 
-        String nameSarah = "Sarah";
-        int ageSarah = 30;
-
-        String[] names = {"John", "Sarah"};
-        int[] ages = {13, 30};
-
-        for (int i = 0; i < names.length; i++) {
-            System.out.println("Имя - " + names[i] + " Возраст - " + ages[i]);
-        }
-        Person sarah = new Person("Sarah", 30);
-        System.out.println("sarah.name = " + sarah.getName());
-        System.out.println("sarah.age = " + sarah.getAge());
-        sarah.setAge(31);
-        System.out.println("sarah.getAge() = " + sarah.getAge());
-        Person john = new Person("John", 13);
-
+        Author sergey = new Author("Sergey", "Nedorubov");
+        Author andrzej1 = new Author("Andrzej", "Sapkowski");
+        Author andrzej2 = new Author("Andrzej", "Sapkowski");
+        System.out.println("Author copies equal: " + andrzej1.equals(andrzej2));
+        System.out.println(("Author copies equal be hashCode: " + (andrzej1.hashCode() == andrzej2.hashCode())));
+        System.out.println("Author equal: " +andrzej1.equals(sergey));
+        System.out.println("Author equal be hashCode: " + (andrzej1.hashCode() == sergey.hashCode()));
+        System.out.println(andrzej1);
+        System.out.println(sergey);
     }
 }
